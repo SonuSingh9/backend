@@ -1,0 +1,16 @@
+{
+  "name": "chaiaurbackedn",
+  "version": "1.0.0",
+  "description": "a backend course ",
+  "keywords": [
+    "javascript",
+    "backend"
+  ],
+  "license": "ISC",
+  "author": "Sonu Singh",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
