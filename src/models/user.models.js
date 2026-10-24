@@ -4,15 +4,15 @@ import bcrypt from "bcrypt"
 
 const userSchema = new Schema(
     {
-        username: {
+
+        userName: {
             type: String,
             unique: true,
             required: true,
             lowercase: true,
             trim: true,
-            index: true
         },
-        userName: {
+        email: {
             type: String,
             unique: true,
             required: true,
@@ -35,7 +35,7 @@ const userSchema = new Schema(
         },
         password: {
             type: String,
-            require: [true, "Password is required"]
+            required: [true, "Password is required"]
 
         },
         refreshToken: {
@@ -56,7 +56,7 @@ const userSchema = new Schema(
 userSchema.pre("save", async function (next) {
     if (!this.isModified("password")) return next();
     this.password = await bcrypt.hash(this.password, 10)
-    next()
+    next;
 })
 
 userSchema.methods.isPasswordCorrect = async function (password) {
